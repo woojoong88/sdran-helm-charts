@@ -47,6 +47,8 @@ config:
       tx_gain: 90
     mode: nfapi #or local_L1 for USRP and BasicSim
     networks:
+      hostNetwork:
+        enabled: true
       f1:
         interface: eno1
         address: 127.0.0.3/24

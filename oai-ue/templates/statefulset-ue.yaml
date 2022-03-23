@@ -32,7 +32,9 @@ spec:
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      {{- if (index .Values "config" "oai-ue" "networks" "hostNetwork" "enabled") }}
       hostNetwork: true
+      {{- end }}
       initContainers:
       - name: oai-ue-init
         image: {{ .Values.images.tags.oaiue | quote }}

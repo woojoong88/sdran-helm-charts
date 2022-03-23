@@ -5,4 +5,5 @@
 
 set -ex
 
-ENODEB=1 /opt/oai/bin/lte-softmodem -O /opt/oai/share/cu.conf
+#ENODEB=1 /opt/oai/bin/lte-softmodem -O /opt/oai/share/cu.conf
+while true; do sleep 3600; done

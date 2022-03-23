@@ -17,6 +17,19 @@ images:
 # Specify annotations (e.g., fluentbit/logging custom parser)
 # annotations:
 #   fluentbit.io/parser: oai
+annotations:
+  k8s.v1.cni.cncf.io/networks: '[
+    {
+      "name": "enb-net",
+      "interface": "eth1",
+      "ips": ["192.168.11.1/29"]
+    },
+    {
+      "name": "e2f1-net",
+      "interface": "e2f1",
+      "ips": ["192.168.200.21/24"]
+    }
+  ]'
 
 # Specify nodeSelector to pin oai-enb-du to worker nodes oaienb only
 #
@@ -42,6 +55,8 @@ config:
       mnc: "01"
       length: 2
     networks:
+      hostNetwork:
+        enabled: true
       common:
         port: 22100
       f1:

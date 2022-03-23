@@ -56,6 +56,8 @@ config:
       opc: "d4416644f6154936193433dd20a0ace0"
       msisdnStart: "1122334456" # for UE0 - will increase for next UEs
     networks:
+      hostNetwork:
+        enabled: true
       nfapi:
         interface: eno1
         address: 127.0.0.4

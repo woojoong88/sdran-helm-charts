@@ -32,7 +32,9 @@ spec:
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      {{- if (index .Values "config" "oai-enb-cu" "networks" "hostNetwork" "enabled") }}
       hostNetwork: true
+      {{- end }}
       dnsPolicy: ClusterFirstWithHostNet
       initContainers:
       - name: oai-enb-cu-init
